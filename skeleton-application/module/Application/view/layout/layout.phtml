@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nucleum</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/foundation.css" />
+    
+    <script src="/js/vendor/modernizr.js"></script>
+    <script src="/js/vendor/jquery.js"></script>
+</head>
+<body>
+
+<div class="headerdiv">
+    <div class="large-12 columns header" style="text-align: center;">
+    	<a href="/"><img src="/img/logoprincipal.png" /></a>
+    </div>
+    <div class="large-12 columns menudiv">
+    	<ul class="menu">
+            
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+    	<?php echo $this->content; ?>
+    </div>
+</div>
+	
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/foundation/foundation.abide.js"></script>
+    <script>
+    $(document).foundation({
+        abide : {
+          patterns: {
+            alphanumesp: /^[a-zA-Z0-9áéíóúÁÉÍÓÚÑñüÜ (),.#@!-:$&%*]+$/
+          }
+        }
+      });
+    </script>
+	
+</body>
+</html>
+        
