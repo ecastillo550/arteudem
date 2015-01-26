@@ -18,7 +18,7 @@
 	echo $this->form()->openTag($form);
 ?>
 <div class="row">
-	<div class="large-4 medium-7 small-12 columns">
+	<div class="large-4 medium-6 small-12 columns">
 		<div class="field">
 		    <?php echo $this->formLabel($form->get('nombre')); ?>
 		    <?php echo $this->formElement($form->get('nombre')); ?>
@@ -41,18 +41,11 @@
 	</div>
 </div>
 <div class="row">
-	<div class="large-4 medium-7 small-12 columns">
+	<div class="large-4 medium-6 small-12 columns">
 		<div class="field">
 		    <?php echo $this->formLabel($form->get('email')); ?>
 		    <?php echo $this->formElement($form->get('email')); ?>
 		    <small class="error">Se requiere de un email v&aacute;lido.</small>
-		</div>
-	</div>
-	<div class="large-4 medium-6 small-12 columns">
-		<div class="field">
-		    <?php echo $this->formLabel($form->get('tel_cel')); ?>
-		    <?php echo $this->formElement($form->get('tel_cel')); ?>
-		    <small class="error">Este campo es requerido.</small>
 		</div>
 	</div>
 	<div class="large-4 medium-6 small-12 columns">
@@ -62,15 +55,16 @@
 		    <small class="error">Es requerido</small>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="large-4 medium-7 small-12 columns">
+	<div class="large-4 medium-6 small-12 columns">
 		<div class="field">
 		    <?php echo $this->formLabel($form->get('ciudad')); ?>
 		    <?php echo $this->formElement($form->get('ciudad')); ?>
 		    <small class="error">Este campo es requerido.</small>
 		</div>
 	</div>
+</div>
+<div class="row">
+	
 	<div class="large-4 medium-6 small-12 columns">
 		<div class="field">
 		    <?php echo $this->formLabel($form->get('institucion')); ?>
@@ -82,6 +76,29 @@
 		<div class="field">
 		    <?php echo $this->formLabel($form->get('grado')); ?>
 		    <?php echo $this->formElement($form->get('grado')); ?>
+		    <small class="error">Es requerido</small>
+		</div>
+	</div>
+	<div class="large-4 medium-6 small-12 columns">
+		<div class="field">
+		    <?php echo $this->formLabel($form->get('titulo')); ?>
+		    <?php echo $this->formElement($form->get('titulo')); ?>
+		    <small class="error">Este campo es requerido.</small>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="large-4 medium-6 small-12 columns">
+		<div class="field">
+		    <?php echo $this->formLabel($form->get('medidax')); ?>
+		    <?php echo $this->formElement($form->get('medidax')); ?>
+		    <small class="error">Este campo es requerido.</small>
+		</div>
+	</div>
+	<div class="large-4 medium-6 small-12 columns">
+		<div class="field">
+		    <?php echo $this->formLabel($form->get('mediday')); ?>
+		    <?php echo $this->formElement($form->get('mediday')); ?>
 		    <small class="error">Es requerido</small>
 		</div>
 	</div>

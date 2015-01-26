@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nucleum</title>
+    <title>Expresibo</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/foundation.css" />
     
@@ -11,20 +11,30 @@
 </head>
 <body>
 
-<div class="headerdiv">
-    <div class="large-12 columns header" style="text-align: center;">
-    	<a href="/"><img src="/img/logoprincipal.png" /></a>
-    </div>
-    <div class="large-12 columns menudiv">
-    	<ul class="menu">
-            
-        </ul>
+<div class="large-3 columns header">
+    <div class="">
+        <div class="large-12 columns logo">
+        	<a href="/"><img src="/img/logoprepaudem.PNG" /></a>
+        </div>
+        <div class="large-12 columns menudiv">
+        	<ul class="menu">
+                <li><a href="#">Galerias</a></li>
+                <li><a href="#">Convocatorias</a></li>
+                <li><a href="#">Quienes somos</a></li>
+                <li><a href="/registro/register/index">Registro</a></li>
+            </ul>
+        </div>
+        <div class="large-12 columns footerdiv">
+            <p>Información adicional</p>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="large-12 columns">
-    	<?php echo $this->content; ?>
+<div class="large-9 columns">
+    <div class="row">
+        <div class="large-12 columns">
+        	<?php echo $this->content; ?>
+        </div>
     </div>
 </div>
 	

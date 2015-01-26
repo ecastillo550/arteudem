@@ -5,29 +5,81 @@
 	    <div id="slider" class="owl-carousel">
 	        <div><img src="/img/slider1.jpg" /></div>
 	        <div><img src="/img/slider2.jpg" /></div>
-                <div><img src="/img/slider3.jpg" /></div>
+            <div><img src="/img/slider3.jpg" /></div>
 	    </div>
     </div>
 </div>
 
-<div class="row hexagonosmain">
-        <div class="large-3 medium-6 small-12 columns">
-                <img src="/img/conferencia.png" />
-                <p>CONFERENCIAS</p>
+<script src="/js/jquery.honeycombs.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/honeycombs.css" />
+<div class="honeycombs">
+        <div class="comb rosa">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 1 info</p>
+            </div>
         </div>
-        <div class="large-3 medium-6 small-12 columns">
-                <img src="/img/talleres.png" />
-                <p>TALLERES</p>
+        <div class="comb amarillo">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 2 info</p>
+            </div>
         </div>
-        <div class="large-3 medium-6 small-12 columns">
-                <img src="/img/expositores.png" />
-                <p>EXPOSITORES</p>
+        <div class="comb morado">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 3 info</p>
+            </div>
         </div>
-        <div class="large-3 medium-6 small-12 columns">
-                <img src="/img/dias.png" />
-                <p>3 DÍAS</p>
-        </div> 
+        <div class="comb morado">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 3 info</p>
+            </div>
+        </div>
+        <div class="comb amarillo">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 4 info</p>
+            </div>
+        </div>
+        <div class="comb amarillo">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 2 info</p>
+            </div>
+        </div>
+        <div class="comb rosa">
+            <div class="front-content">
+                <p>CONVOCATORIA!</p>
+            </div>
+            <div class="back-content">
+                <p>Convocatoria 4 info</p>
+            </div>
+        </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+    $('.honeycombs').honeycombs({
+        combWidth:260,  // width of the hexagon
+        margin: -30,      // spacing between hexagon
+        threshold: 3    // hide placeholder hexagons when number of hexagons in a row is more than the threshold number
+    });
+});
+</script>
 
 <script src="/js/owl-carousel/owl.carousel.js"></script>
 

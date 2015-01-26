@@ -10,14 +10,14 @@ body {
 	margin-top: 24px;
 	font-size: 1.5em;
 }
-
-.menu li{
-	float: left;
-}
-
 .menu li a{
 	color: #fff;
 	text-decoration: none;
+}
+
+.menu li{
+	float: none;
+	margin-left: 10px; 
 }
 
 .menu li a:hover{
@@ -26,22 +26,54 @@ body {
 }
 
 .menudiv {
-	background-color: #333;
+	color: #000;
+	background-color: #6CCCBD;
+	height: 50%;
+}
+
+.footerdiv {
+	color: #000;
+	background-color: #DC4F56;
+	height: 20%;
 }
 
 .header {
-	background-color: #013739;
+	border-right: solid 2px #000;
+	height: 100%;
 }
 
-.headerdiv {
-	margin-bottom: 15px;
-	overflow: hidden;
+.header .logo {
+	height: 30%;
 }
 
-.hexagonosmain div {
-	text-align: center;
-}
 
-.hexagonosmain p {
-	margin-top: .1em;
+@media screen and (max-width: 1024px) {
+	.footerdiv {
+		color: #000;
+		background-color: #DC4F56;
+		height: auto;
+		text-align: center;
+	}
+
+	.header {
+		border-right: solid 2px #000;
+		height: auto;
+	}
+
+	.menudiv {
+		color: #000;
+		background-color: #6CCCBD;
+		height: auto;
+	}
+
+	.header .logo {
+		height: auto;
+		text-align: center;
+	}
+
+	.menu li{
+		float: left;
+		margin-left: 30px;
+		margin-bottom: 15px;
+	}
 }

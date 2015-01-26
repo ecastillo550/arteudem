@@ -163,42 +163,27 @@
 }
 
 
-.bionegocios:hover > span {
-	color: #209bd7 !important;
+.rosa:hover > span {
+	color: #6CCCBD !important;
 }
 
-.agrobiotecnologia:hover > span {
-	color: #e5b547 !important;
+.amarillo:hover > span {
+	color: #89BE53 !important;
 }
 
-.biotecnologia:hover > span {
-	color: #4e8f41 !important;
+.morado:hover > span {
+	color: #DC4F56 !important;
 }
 
-.industrias:hover > span {
-	color: #5a2b7b !important;
+
+.rosa > span {
+	color: #DC4F56 !important;
 }
 
-.ciencias:hover > span {
-	color: #c02227 !important;
+.amarillo > span {
+	color: #FBCE40 !important;
 }
 
-.bionegocios > span {
-	color: #80ceeb !important;
-}
-
-.agrobiotecnologia > span {
-	color: #f4daac !important;
-}
-
-.biotecnologia > span {
-	color: #a2c8a6 !important;
-}
-
-.industrias > span {
-	color: #ad96bc !important;
-}
-
-.ciencias > span {
-	color: #e38e95 !important;
+.morado > span {
+	color: #562999 !important;
 }

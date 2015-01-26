@@ -58,17 +58,7 @@ class RegisterForm extends Form
 					 'label' => 'Correo electrónico',
 				),
 		 ));
-		 $this->add(array(
-				 'name' => 'tel_cel',
-				 'type' => 'text',
-				 'attributes' => array(
-				 	'required' => ' ',
-				 	'pattern' => 'alphanumesp',
-				 ),
-				 'options' => array(
-					 'label' => 'Teléfono Celular',
-				),
-		 ));
+		 
 		 $this->add(array(
 				 'name' => 'estado',
 				 'type' => 'Select',
@@ -152,7 +142,39 @@ class RegisterForm extends Form
                      ),
 				),
 		 ));
-
+                 $this->add(array(
+                                 'name' => 'titulo',
+                                 'type' => 'text',
+                                 'attributes' => array(
+                                        'required' => ' ',
+                                        'pattern' => 'alphanumesp',
+                                 ),
+                                 'options' => array(
+                                         'label' => 'Título de la obra',
+                                ),
+                 ));
+                 $this->add(array(
+                                 'name' => 'medidax',
+                                 'type' => 'text',
+                                 'attributes' => array(
+                                        'required' => ' ',
+                                        'pattern' => 'alphanumesp',
+                                 ),
+                                 'options' => array(
+                                         'label' => 'Ancho de la obra',
+                                ),
+                 ));
+                 $this->add(array(
+                                 'name' => 'mediday',
+                                 'type' => 'text',
+                                 'attributes' => array(
+                                        'required' => ' ',
+                                        'pattern' => 'alphanumesp',
+                                 ),
+                                 'options' => array(
+                                         'label' => 'Alto de la obra',
+                                ),
+                 ));
 		 $this->add(array(
 				 'name' => 'submit',
 				 'type' => 'Submit',
