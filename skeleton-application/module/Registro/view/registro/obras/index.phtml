@@ -1,0 +1,79 @@
+
+<div class="row">
+        <div class="large-3 medium-3 small-12 columns">
+            <ul class="menuvert">
+                <?php foreach ($subgalerias as $link) : ?>
+                    <li><a class="button radius btnAnuncios" href="/info/obras/index/<?php echo $link['subgaleria'];?>"><?php echo $link['subgaleria'];?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="large-9 medium-9 small-12 columns">
+            <div id="sync1" class="owl-carousel big-images">
+            <?php foreach ($obras as $obra) : ?>
+            <div>
+                <img src="<?php echo $this->escapeHtml($obra->path);?>" />
+            </div>
+            <?php endforeach; ?>
+            </div>
+
+        <div id="sync2" class="owl-carousel thumbs"  style="margin-top: 70px;">
+            <?php foreach ($obras2 as $obra) : ?>
+            <div>
+                <img src="<?php echo $this->escapeHtml($obra->path);?>" />
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    $(document).ready(function() {
+
+var $sync1 = $(".big-images"),
+        $sync2 = $(".thumbs"),
+        flag = false,
+        duration = 300;
+
+    $sync1
+        .owlCarousel({
+            items: 1,
+            margin: 10,
+            nav: true,
+            lazyLoad:true,
+            autoHeight:true,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
+            dots: true
+        })
+        .on('changed.owl.carousel', function (e) {
+            if (!flag) {
+                flag = true;
+                $sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
+                flag = false;
+            }
+        });
+
+    $sync2
+        .owlCarousel({
+            margin: 20,
+            items: 6,
+            center: true,
+            dots: true
+        })
+        .on('click', '.owl-item', function () {
+            $sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
+
+        })
+        .on('changed.owl.carousel', function (e) {
+            if (!flag) {
+                flag = true;
+                $sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
+                flag = false;
+            }
+        });
+    });
+
+
+</script>

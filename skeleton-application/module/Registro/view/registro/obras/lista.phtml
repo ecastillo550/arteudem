@@ -1,0 +1,41 @@
+
+<style>
+</style>
+
+<div class="row">
+	<div class="large-12 columns">
+	<a href="/registro/obras/add" class="button">Nuevo</a>
+		<?php
+		$n = 0;
+		foreach ($obras as $obra) : ?>
+
+		<?php if (condition): ?>
+
+		<?php endif ?>
+		<?php
+		$class = ' ';
+		if ($obra->activo == 'n') {
+			$class = ' desactivado ';
+		}
+		if ($n == 0) {
+			echo '<div class="row" data-equalizer>';
+		}
+		?>
+		<div class="large-4 medium-6 small-12 panel columns <?php echo $class;?>" data-equalizer-watch>
+			<div class="large-10 columns">
+				<?php echo $this->escapeHtml($obra->nombre);?>
+			</div>
+			<div class="large-2 columns">
+				<a href="/registro/obras/edit/<?php echo $this->escapeHtml($obra->id);?>">Editar</a>
+			</div>
+		</div>
+		<?php
+		if ($n == 2) {
+			echo '</div>';
+			$n = -1;
+		}
+		$n++;
+		?>
+	<?php endforeach; ?>
+</div>
+</div>

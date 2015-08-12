@@ -12,6 +12,10 @@ namespace Registro;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Registro\Model\Obra;
+use Registro\Model\ObraTable;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
 
 class Module implements AutoloaderProviderInterface
 {
@@ -42,5 +46,30 @@ class Module implements AutoloaderProviderInterface
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+    }
+
+    public function getServiceConfig()
+    {
+        return array(
+        'abstract_factories' => array(),
+        'aliases' => array(),
+        'factories' => array(
+            // DB
+            'ObraTable' => function($sm) {
+                $tableGateway = $sm->get('ObraTableGateway');
+                $table = new ObraTable($tableGateway);
+                return $table;
+            },
+            'ObraTableGateway' => function ($sm) {
+                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                $resultSetPrototype = new ResultSet();
+                $resultSetPrototype->setArrayObjectPrototype(new Obra());
+                return new TableGateway('Obra', $dbAdapter, null, $resultSetPrototype);
+            },
+        ),
+        'invokables' => array(),
+        'services' => array(),
+        'shared' => array(),
+        );
     }
 }

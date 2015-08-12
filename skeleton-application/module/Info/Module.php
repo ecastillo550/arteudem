@@ -12,8 +12,8 @@ namespace Info;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use Info\Model\Conferencia;
-use Info\Model\ConferenciaTable;
+use Info\Model\Subgaleria;
+use Info\Model\SubgaleriaTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -55,16 +55,16 @@ class Module implements AutoloaderProviderInterface
         'aliases' => array(),
         'factories' => array(
             // DB
-            'ConferenciaTable' => function($sm) {
-                $tableGateway = $sm->get('ConferenciaTableGateway');
-                $table = new ConferenciaTable($tableGateway);
+            'SubgaleriaTable' => function($sm) {
+                $tableGateway = $sm->get('SubgaleriaTableGateway');
+                $table = new SubgaleriaTable($tableGateway);
                 return $table;
             },
-            'ConferenciaTableGateway' => function ($sm) {
+            'SubgaleriaTableGateway' => function ($sm) {
                 $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                 $resultSetPrototype = new ResultSet();
-                $resultSetPrototype->setArrayObjectPrototype(new Conferencia());
-                return new TableGateway('Conferencia', $dbAdapter, null, $resultSetPrototype);
+                $resultSetPrototype->setArrayObjectPrototype(new Subgaleria());
+                return new TableGateway('Subgaleria', $dbAdapter, null, $resultSetPrototype);
             },
         ),
         'invokables' => array(),

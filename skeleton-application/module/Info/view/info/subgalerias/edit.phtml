@@ -1,0 +1,58 @@
+<div class="row">
+
+<section class="Registro">
+<h2>Registro</h2>
+<?php if ($this->error): ?>
+<p class="error">
+ Hubo errores en la información ingresada, favor de verificarlos.
+</p>
+<?php endif ?>
+
+
+
+
+<?php
+        //Vista de Forma
+        $form = $this->form;
+
+
+       $form->setAttribute('action', $this->url(
+                             NULL,
+                                 array(
+                                    'controller' => 'subgalerias',
+                                    'action' => 'edit',
+                                    'id'     => $this->id,
+                                 )
+                             ));
+        $form->setAttribute('data-abide', '');
+        $form->prepare();
+        echo $this->form()->openTag($form);
+        echo $this->formHidden($form->get('id'));
+?>
+<div class="row">
+        <div class="large-6 medium-4 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('galeria')); ?>
+                    <?php echo $this->formElement($form->get('galeria')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-6 medium-4 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('subgaleria')); ?>
+                    <?php echo $this->formElement($form->get('subgaleria')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-6 medium-4 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('activo')); ?>
+                    <?php echo $this->formElement($form->get('activo')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+</div>
+<?php echo $this->formElement($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag() ?>
+</div>
