@@ -3,22 +3,19 @@
 <div class="row">
     <div class="large-12 columns">
 	    <div id="slider" class="owl-carousel">
-	        <div><img src="/img/slider1.jpg" /></div>
-	        <div><img src="/img/slider2.jpg" /></div>
-            <div><img src="/img/slider3.jpg" /></div>
+        <?php foreach($obras as $obra) : ?>
+	        <div>
+            <img src="http://expresibo.com<?php echo $obra['path'];?>" />
+            <fieldset>
+            <legend>Cédula:</legend>
+                Nombre: <?php echo $obra['nombre'] . ' '. $obra['apellido_paterno'] . ' '. $obra['apellido_materno'];?><br>
+                Técnica: <?php echo $obra['tecnica'];?><br>
+            </fieldset>
+            </div>
+        <?php endforeach; ?>
 	    </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-    $('.honeycombs').honeycombs({
-        combWidth:260,  // width of the hexagon
-        margin: -30,      // spacing between hexagon
-        threshold: 3    // hide placeholder hexagons when number of hexagons in a row is more than the threshold number
-    });
-});
-</script>
 
 <script src="/js/owl-carousel/owl.carousel.js"></script>
 

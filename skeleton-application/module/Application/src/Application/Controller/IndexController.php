@@ -11,12 +11,32 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Db\Sql\Sql;
+use Zend\Db\Adapter\Adapter;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
+
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $sm = $this->getServiceLocator();
+        $adapter = $sm->get('Zend\Db\Adapter\Adapter');
+
+        $sql = new Sql($adapter);
+        $select = $sql->select()->from('Obra')->where(array('activo' => 'y'));
+        $statement = $sql->prepareStatementForSqlObject($select);
+        $result = $statement->execute();
+        $resultSet = new ResultSet;
+        $row = $resultSet->initialize($result)->toArray();
+
+        //print_r($row);
+
+        $view = new ViewModel(array(
+            'obras' => $row
+            ));
+        return $view;
     }
 
     public function  panelAction()
